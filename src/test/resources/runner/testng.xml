@@ -1,9 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="DataDrivenBase">
-  <test thread-count="5" name="LoginTest">
+
+    <listeners>
+      <listener class-name="org.uncommons.reportng.HTMLReporter"/>
+      <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>     
+      <listener class-name="com.w2a.listeners.CustomListeners"/>
+  	</listeners>
+
+  <test name="BankManagerLoginTest">
     <classes>
-      <class name="com.w2a.testcases.LoginTest"/>
+      <class name="com.w2a.testcases.BankManagerLoginTest"/>
     </classes>
   </test> <!-- Test -->
+  
+    <test name="AddCustomerTest">
+    <classes>
+      <class name="com.w2a.testcases.AddCutomerTest"/>
+    </classes>
+  </test> <!-- Test -->
+  
+      <test name="OpenAccountTest">
+    <classes>
+      <class name="com.w2a.testcases.OpenAccountTest"/>
+    </classes>
+  </test> <!-- Test -->
+  
 </suite> <!-- Suite -->
